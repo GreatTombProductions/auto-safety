@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Safety Check — Vehicle Complaint Lookup</title>
+    <meta name="description" content="Check vehicle safety complaints before you buy. Search by make, model, and year. 2.2 million consumer complaints, crash and fire reports — now searchable.">
+    <meta property="og:title" content="Auto Safety Check">
+    <meta property="og:description" content="Look up safety complaints for any vehicle. 2.2 million NHTSA consumer complaints with crash, fire, injury, and death reports.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Auto Safety Check</h1>
+    <p class="subtitle">Look up safety complaints before you buy</p>
+</header>
+
+<main>
+    <div class="search-section">
+        <div class="search-row">
+            <select id="make-select" class="search-select">
+                <option value="">Select make...</option>
+            </select>
+            <select id="model-select" class="search-select" disabled>
+                <option value="">Select model...</option>
+            </select>
+            <select id="year-select" class="search-select" disabled>
+                <option value="">All years</option>
+            </select>
+        </div>
+        <p class="search-hint" id="search-hint">Loading data...</p>
+    </div>
+
+    <!-- Stats banner (shown on landing) -->
+    <div id="stats-banner" class="stats-banner">
+        <div class="stat-item">
+            <div class="stat-value" id="stat-complaints">—</div>
+            <div class="stat-label">Complaints</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value" id="stat-crashes">—</div>
+            <div class="stat-label">Crashes</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value red" id="stat-deaths">—</div>
+            <div class="stat-label">Deaths Reported</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value" id="stat-vehicles">—</div>
+            <div class="stat-label">Vehicle/Years</div>
+        </div>
+    </div>
+
+    <!-- Top complained-about vehicles (landing page) -->
+    <div id="top-section" class="top-section">
+        <h2>Most Complained-About Vehicles</h2>
+        <div id="top-list" class="top-list"></div>
+    </div>
+
+    <!-- Vehicle detail view -->
+    <div id="detail-section" class="detail-section hidden">
+        <div id="vehicle-header" class="vehicle-header"></div>
+
+        <!-- Severity summary -->
+        <div id="severity-grid" class="severity-grid"></div>
+
+        <!-- Component breakdown -->
+        <div id="components-section" class="components-section">
+            <h3>Complaint Categories</h3>
+            <div id="components-chart" class="components-chart"></div>
+        </div>
+
+        <!-- Timeline -->
+        <div id="timeline-section" class="timeline-section">
+            <h3>Complaints Over Time</h3>
+            <div id="timeline-chart" class="timeline-chart"></div>
+        </div>
+
+        <!-- Compare to other years -->
+        <div id="compare-section" class="compare-section">
+            <h3>Compare Model Years</h3>
+            <div id="compare-table"></div>
+        </div>
+    </div>
+
+    <!-- Multi-year model view -->
+    <div id="model-section" class="model-section hidden">
+        <div id="model-header" class="model-header"></div>
+        <div id="model-years" class="model-years"></div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <p><strong>Data source:</strong> <a href="https://www.nhtsa.gov/recalls-complaints/complaints" target="_blank" rel="noopener">NHTSA Office of Defects Investigation</a>. Consumer complaints submitted to the National Highway Traffic Safety Administration.</p>
+        <p><strong>Important:</strong> These are consumer-reported complaints, not verified defects. Higher-selling vehicles naturally receive more complaints. Crash, fire, injury, and death counts are consumer-reported and not independently verified by NHTSA. This tool is not legal or safety advice.</p>
+        <p class="footer-vintage" id="footer-vintage"></p>
+    </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

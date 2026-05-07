@@ -1,0 +1,21 @@
+{
+  "title": "Auto Safety Complaints",
+  "description": "NHTSA consumer complaints about vehicle safety defects",
+  "data_source": "U.S. Department of Transportation, National Highway Traffic Safety Administration",
+  "source_url": "https://www.nhtsa.gov/recalls-complaints/complaints",
+  "download_url": "https://static.nhtsa.gov/odi/ffdd/cmpl/FLAT_CMPL.zip",
+  "total_complaints": 2202637,
+  "unique_vehicles": 32031,
+  "total_crashes": 133911,
+  "total_injuries": 119256,
+  "total_deaths": 7365,
+  "update_frequency": "Updated regularly",
+  "disclaimer": "Consumer complaints submitted to NHTSA. Not verified by NHTSA. Complaint counts alone do not indicate a safety defect. Higher-selling vehicles naturally receive more complaints. Not legal advice.",
+  "data_freshness": {
+    "vintage": "May 2026",
+    "source_update_frequency": "regularly",
+    "staleness_threshold_months": 6,
+    "staleness_action": "refresh_or_warn"
+  },
+  "methodology": "Complaints pre-aggregated by make/model/year. Component categories extracted from NHTSA's colon-separated hierarchy. Crash, fire, injury, and death flags are consumer-reported, not verified. Recall counts cross-referenced from NHTSA recall database."
+}
