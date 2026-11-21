@@ -31,6 +31,7 @@ def download_file(url: str, dest: Path, description: str) -> Path:
     result = subprocess.run(
         ["curl", "-L", "--fail", "-o", str(dest), url],
         capture_output=False,
+        timeout=600,
     )
     if result.returncode != 0:
         print(f"  ERROR: Download failed for {description}.", file=sys.stderr)
